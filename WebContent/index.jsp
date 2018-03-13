@@ -6,6 +6,8 @@
 <%
 	GuestBookDao dao = new GuestBookDao();
 	List<GuestBookVo> list = dao.getList();
+	
+	int count = 1;
 %>
 
 <!doctype html>
@@ -33,7 +35,7 @@
 	<% for(GuestBookVo vo :  list ) {%>
 	<table width="510" border="1">
 		<tr>
-			<td>[<%=vo.getNo() %>]</td>
+			<td>[<%=count++ %>]</td>
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getDateTime() %></td>
 			<td><a href="/guestbook/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
