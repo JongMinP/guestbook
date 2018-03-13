@@ -25,6 +25,7 @@ public class GuestBookDao {
 
 			sql.append("select no,name,password,content, date_format(reg_date,'%Y-%m-%d') as reg_date ");
 			sql.append("from guestbook ");
+			sql.append("order by no desc ");
 			pstmt = conn.prepareStatement(sql.toString());
 
 			rs = pstmt.executeQuery();
