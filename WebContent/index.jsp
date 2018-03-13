@@ -33,7 +33,7 @@
 	<% for(GuestBookVo vo :  list ) {%>
 	<table width="510" border="1">
 		<tr>
-			<td>[1]</td>
+			<td>[<%=vo.getNo() %>]</td>
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getDateTime() %></td>
 			<td><a href="/guestbook/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
