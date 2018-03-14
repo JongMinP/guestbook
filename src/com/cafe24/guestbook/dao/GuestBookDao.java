@@ -123,8 +123,10 @@ public class GuestBookDao {
 
 			sql.append("select no,name,password,content, date_format(reg_date,'%Y-%m-%d') as reg_date ");
 			sql.append("from guestbook ");
+			sql.append("where no = ? ");
 			pstmt = conn.prepareStatement(sql.toString());
 
+			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
